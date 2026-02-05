@@ -110,6 +110,42 @@ For relevant case studies found:
 - Note quantified benefits (%, hours saved, ROI)
 - Categorize by functional area (AP, AR, Close, FP&A, etc.)
 
+### Step 2c: Check PE & M&A AI Developments
+
+Search for private equity and M&A AI developments:
+
+**PE Deal Sourcing & Portfolio Platforms:**
+- PitchBook: https://pitchbook.com/news/reports
+- CB Insights: https://www.cbinsights.com/research/
+- AlphaSense: https://www.alpha-sense.com/resources/
+- Affinity: https://www.affinity.co/blog
+
+**M&A Due Diligence AI Tools:**
+- Kira Systems: https://www.litera.com/kira
+- Datasite: https://www.datasite.com/en/resources
+- DealRoom: https://dealroom.net/resources
+- Hebbia: https://www.hebbia.ai/
+- ToltIQ: https://toltiq.com/
+
+**PE Thought Leadership:**
+- BDO PE: https://www.bdo.com/insights/industries/private-equity
+- EY Private Equity: https://www.ey.com/en_us/private-equity
+- KPMG PE: https://kpmg.com/us/en/industries/private-equity.html
+- Deloitte PE: https://www.deloitte.com/global/en/industries/private-equity.html
+
+**Search queries for PE/M&A:**
+1. "private equity AI due diligence 2026"
+2. "M&A AI contract analysis tools"
+3. "PE portfolio monitoring AI automation"
+4. "deal sourcing AI 2026"
+5. "VDR artificial intelligence"
+
+For PE/M&A articles found:
+- Extract use case type (deal sourcing, due diligence, portfolio monitoring, value creation)
+- Note AI capabilities (NLP, ML, predictive analytics)
+- Identify target platforms/tools
+- Quantify benefits where available (% time reduction, deal acceleration)
+
 ### Step 3: Update Excel Workbook
 
 Use Python to update `AI_Use_Cases_Comprehensive_2026.xlsx`:

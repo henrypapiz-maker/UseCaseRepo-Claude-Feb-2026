@@ -21,6 +21,7 @@ This session created a comprehensive AI Use Cases workbook with the following co
 | Legal Tech Use Cases | 15 use cases for legal | Monthly |
 | Mfg & Dist Finance Use Cases | 18 manufacturing finance use cases | Monthly |
 | AI Research & White Papers | 24 articles with synopses | Daily |
+| PE & M&A AI Use Cases | Private equity and M&A AI capabilities | Weekly |
 
 ---
 
@@ -177,7 +178,64 @@ Repositories to monitor:
 
 ---
 
-### Task 6: Update Excel Workbook
+### Task 6: Monitor PE & M&A AI Developments
+**Frequency:** Weekly
+**Purpose:** Track AI developments in private equity and M&A transactions
+
+#### PE Deal Sourcing & Portfolio Platforms
+| Platform | URL | Focus Areas |
+|----------|-----|-------------|
+| PitchBook | https://pitchbook.com/news/reports | Deal sourcing, market intelligence |
+| CB Insights | https://www.cbinsights.com/research/ | Investment analytics, company data |
+| SourceScrub | https://www.sourcescrub.com/resources | Target identification, deal flow |
+| Affinity | https://www.affinity.co/blog | Relationship intelligence, CRM |
+| AlphaSense | https://www.alpha-sense.com/resources/ | Financial research, market intelligence |
+
+#### PE AI Thought Leadership
+| Source | URL | Focus Areas |
+|--------|-----|-------------|
+| BDO PE | https://www.bdo.com/insights/industries/private-equity | PE AI use cases, value creation |
+| EY Private Equity | https://www.ey.com/en_us/private-equity | AI transformation, due diligence |
+| CLA Connect | https://www.claconnect.com/en/resources/blogs/private-equity | PE technology trends |
+| KPMG Private Equity | https://kpmg.com/us/en/industries/private-equity.html | Deal advisory, AI insights |
+| Deloitte PE | https://www.deloitte.com/global/en/industries/private-equity.html | Value creation, digital transformation |
+
+#### M&A Due Diligence AI Tools
+| Platform | URL | Focus Areas |
+|----------|-----|-------------|
+| Kira Systems | https://www.litera.com/kira | Contract analysis, clause extraction |
+| Datasite | https://www.datasite.com/en/resources | VDR, document management |
+| DealRoom | https://dealroom.net/resources | M&A lifecycle, workflow |
+| Hebbia | https://www.hebbia.ai/ | Knowledge work, document Q&A |
+| ToltIQ | https://toltiq.com/ | Private markets due diligence |
+
+#### VDR & Transaction Platforms
+| Vendor | URL | Focus Areas |
+|--------|-----|-------------|
+| Intralinks | https://www.intralinks.com/insights | VDR, deal management |
+| iDeals | https://www.idealsvdr.com/blog/ | Mid-market VDR |
+| FirmRoom | https://firmroom.com/blog | AI-powered VDR |
+| Merrill DatasiteOne | https://www.datasite.com/en | Enterprise VDR |
+
+#### PE Portfolio Monitoring
+| Platform | URL | Focus Areas |
+|----------|-----|-------------|
+| BlackRock Aladdin | https://www.blackrock.com/aladdin | Portfolio management, risk |
+| ZBrain | https://zbrain.ai/use-cases | Portfolio analytics |
+| Nosible | https://www.nosible.com/ | Visual portfolio insights |
+| Arctic AI | https://www.arctic.ai/ | Operational efficiency |
+
+**Search queries for PE/M&A:**
+- "private equity AI due diligence 2026"
+- "M&A AI contract analysis"
+- "PE portfolio monitoring AI"
+- "deal sourcing AI automation"
+- "VDR artificial intelligence"
+- "PE value creation AI"
+
+---
+
+### Task 7: Update Excel Workbook
 **Frequency:** Daily (after research tasks)
 **Actions:**
 1. Update GitHub Repo Synopsis with new activity dates
