@@ -116,7 +116,68 @@ Repositories to monitor:
 
 ---
 
-### Task 5: Update Excel Workbook
+### Task 5: Monitor Vendor Use Case Libraries
+**Frequency:** Weekly
+**Purpose:** Track published AI use cases from major technology vendors
+
+#### Cloud AI Platforms
+| Vendor | Use Case Library URL | Focus Areas |
+|--------|---------------------|-------------|
+| AWS | https://aws.amazon.com/solutions/case-studies/ | SageMaker, Bedrock, ML use cases |
+| Google Cloud | https://cloud.google.com/customers | Vertex AI, Document AI, BigQuery ML |
+| Microsoft Azure | https://customers.microsoft.com/en-us/search?sq=AI | Azure AI, Copilot, OpenAI Service |
+| IBM | https://www.ibm.com/case-studies | watsonx, Watson AI, automation |
+
+#### Enterprise Software Vendors
+| Vendor | Use Case Library URL | Focus Areas |
+|--------|---------------------|-------------|
+| Salesforce | https://www.salesforce.com/customer-stories/ | Einstein AI, Agentforce, Data Cloud |
+| ServiceNow | https://www.servicenow.com/customers.html | Now Assist, workflow automation |
+| Workday | https://www.workday.com/en-us/customer-stories.html | Illuminate AI, HCM/Finance AI |
+| SAP | https://www.sap.com/about/customer-stories.html | Joule, Business AI, S/4HANA |
+
+#### RPA & Automation Vendors
+| Vendor | Use Case Library URL | Focus Areas |
+|--------|---------------------|-------------|
+| UiPath | https://www.uipath.com/resources/automation-case-studies | RPA, AI Center, Document Understanding |
+| Automation Anywhere | https://www.automationanywhere.com/resources/customer-stories | IQ Bot, Process Discovery |
+| Blue Prism (SS&C) | https://www.blueprism.com/resources/case-studies/ | Intelligent automation |
+| Celonis | https://www.celonis.com/customers/ | Process mining, execution management |
+
+#### Data & Analytics Platforms
+| Vendor | Use Case Library URL | Focus Areas |
+|--------|---------------------|-------------|
+| Snowflake | https://www.snowflake.com/en/customers/ | Snowflake Cortex, ML functions |
+| Databricks | https://www.databricks.com/customers | Unity Catalog, MLflow, LakehouseIQ |
+| Palantir | https://www.palantir.com/offerings/ | Foundry, AIP for finance |
+| Alteryx | https://www.alteryx.com/customer-stories | Analytics automation, ML |
+
+#### Finance-Specific Vendors
+| Vendor | Use Case Library URL | Focus Areas |
+|--------|---------------------|-------------|
+| BlackLine | https://www.blackline.com/resources/case-studies/ | Financial close, intercompany AI |
+| HighRadius | https://www.highradius.com/resources/case-studies/ | AR automation, treasury AI |
+| Coupa | https://www.coupa.com/customers | Spend intelligence, procurement AI |
+| Workiva | https://www.workiva.com/customers | ESG, financial reporting AI |
+
+#### AI Research Libraries & Repositories
+| Source | URL | Content Type |
+|--------|-----|--------------|
+| Hugging Face | https://huggingface.co/models | Open source models, datasets |
+| Papers With Code | https://paperswithcode.com/ | ML papers with implementations |
+| Model Zoo | https://modelzoo.co/ | Pre-trained models |
+| AI Multiple | https://research.aimultiple.com/ | Use case research database |
+| Gartner Peer Insights | https://www.gartner.com/reviews/home | Vendor reviews with use cases |
+
+**Search queries for vendor libraries:**
+- "[Vendor] AI case study finance accounting 2025 2026"
+- "[Vendor] customer story automation"
+- "[Vendor] use case gallery"
+- "site:[vendor].com AI use case"
+
+---
+
+### Task 6: Update Excel Workbook
 **Frequency:** Daily (after research tasks)
 **Actions:**
 1. Update GitHub Repo Synopsis with new activity dates

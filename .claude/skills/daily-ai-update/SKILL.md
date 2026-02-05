@@ -61,7 +61,54 @@ Search for new articles published in the last 7 days:
 For each new article found:
 - Extract title, date, URL
 - Write a 100-200 word synopsis
-- Categorize as: Hyperscaler, Big 4, AI Studio, or Academic
+- Categorize as: Hyperscaler, Big 4, AI Studio, Academic, or Vendor
+
+### Step 2b: Check Vendor Use Case Libraries
+
+Search vendor use case libraries for new AI case studies:
+
+**Cloud AI Platforms:**
+- AWS Case Studies: https://aws.amazon.com/solutions/case-studies/ (filter: AI/ML)
+- Google Cloud Customers: https://cloud.google.com/customers (filter: AI)
+- Microsoft Customer Stories: https://customers.microsoft.com/en-us/search?sq=AI
+- IBM Case Studies: https://www.ibm.com/case-studies (filter: AI)
+
+**Enterprise Software:**
+- Salesforce Customer Stories: https://www.salesforce.com/customer-stories/
+- ServiceNow Customers: https://www.servicenow.com/customers.html
+- Workday Customer Stories: https://www.workday.com/en-us/customer-stories.html
+- SAP Customer Stories: https://www.sap.com/about/customer-stories.html
+
+**RPA & Automation:**
+- UiPath Case Studies: https://www.uipath.com/resources/automation-case-studies
+- Automation Anywhere: https://www.automationanywhere.com/resources/customer-stories
+- Blue Prism Case Studies: https://www.blueprism.com/resources/case-studies/
+- Celonis Customers: https://www.celonis.com/customers/
+
+**Data Platforms:**
+- Snowflake Customers: https://www.snowflake.com/en/customers/
+- Databricks Customers: https://www.databricks.com/customers
+- Palantir Offerings: https://www.palantir.com/offerings/
+
+**Finance-Specific:**
+- BlackLine Case Studies: https://www.blackline.com/resources/case-studies/
+- HighRadius Case Studies: https://www.highradius.com/resources/case-studies/
+- Coupa Customers: https://www.coupa.com/customers
+
+**AI Research Libraries:**
+- Hugging Face Models: https://huggingface.co/models (filter: finance)
+- Papers With Code: https://paperswithcode.com/ (search: finance, accounting)
+- AI Multiple Research: https://research.aimultiple.com/
+
+**Search queries for vendors:**
+- "[Vendor] AI case study finance 2025 2026"
+- "[Vendor] customer story automation accounting"
+- "site:[vendor].com AI use case finance"
+
+For relevant case studies found:
+- Extract company name, vendor, use case description
+- Note quantified benefits (%, hours saved, ROI)
+- Categorize by functional area (AP, AR, Close, FP&A, etc.)
 
 ### Step 3: Update Excel Workbook
 
