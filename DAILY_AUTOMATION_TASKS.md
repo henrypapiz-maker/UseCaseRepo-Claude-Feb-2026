@@ -22,6 +22,7 @@ This session created a comprehensive AI Use Cases workbook with the following co
 | Mfg & Dist Finance Use Cases | 18 manufacturing finance use cases | Monthly |
 | AI Research & White Papers | 24 articles with synopses | Daily |
 | PE & M&A AI Use Cases | Private equity and M&A AI capabilities | Weekly |
+| AI Strategy Roadmaps | 23 downloadable PDFs from Big 4/consulting firms | Monthly |
 
 ---
 
@@ -235,7 +236,44 @@ Repositories to monitor:
 
 ---
 
-### Task 7: Update Excel Workbook
+### Task 7: Monitor AI Strategy Roadmaps
+**Frequency:** Monthly
+**Purpose:** Track new AI strategy publications from major consulting and research firms
+
+#### Primary Sources (Free PDFs, >5 pages)
+
+| Firm | Publication Page | Focus |
+|------|------------------|-------|
+| McKinsey | https://www.mckinsey.com/capabilities/quantumblack/our-insights | State of AI, Agentic AI |
+| Deloitte | https://www.deloitte.com/global/en/services/consulting/research/ | Tech Trends, AI Institute |
+| Accenture | https://www.accenture.com/us-en/insights/technology | Technology Vision |
+| BCG | https://www.bcg.com/capabilities/artificial-intelligence/insights | AI Radar, Executive Perspectives |
+| KPMG | https://kpmg.com/xx/en/our-insights/ai-and-technology.html | Global Tech Report |
+| PwC | https://www.pwc.com/us/en/tech-effect/ai-analytics.html | AI Predictions, Readiness |
+| EY | https://www.ey.com/en_us/ai | AI Barometer, Regulatory |
+| WEF | https://www.weforum.org/publications/ | Blueprint, Sovereignty |
+
+**Search queries:**
+- "[Firm] AI strategy PDF 2026"
+- "[Firm] AI roadmap report download"
+- "[Firm] generative AI enterprise PDF"
+- "[Firm] agentic AI strategy"
+
+**Criteria for inclusion:**
+- Must be free to download (no paywall/registration wall)
+- PDF or PPT format
+- Minimum 5 pages
+- Published within last 12 months
+
+**Actions:**
+1. Check each firm's publication page monthly
+2. Download and review new AI strategy documents
+3. Add qualifying documents to AI Strategy Roadmaps sheet
+4. Update download links if URLs change
+
+---
+
+### Task 8: Update Excel Workbook
 **Frequency:** Daily (after research tasks)
 **Actions:**
 1. Update GitHub Repo Synopsis with new activity dates

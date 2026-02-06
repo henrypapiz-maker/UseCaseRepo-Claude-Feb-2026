@@ -146,6 +146,39 @@ For PE/M&A articles found:
 - Identify target platforms/tools
 - Quantify benefits where available (% time reduction, deal acceleration)
 
+### Step 2d: Check AI Strategy Roadmaps (Monthly)
+
+Search for new AI strategy publications from major firms:
+
+**Primary Sources:**
+| Firm | URL | Focus |
+|------|-----|-------|
+| McKinsey | https://www.mckinsey.com/capabilities/quantumblack/our-insights | State of AI |
+| Deloitte | https://www.deloitte.com/global/en/services/consulting/research/ | Tech Trends |
+| Accenture | https://www.accenture.com/us-en/insights/technology | Technology Vision |
+| BCG | https://www.bcg.com/capabilities/artificial-intelligence/insights | AI Radar |
+| KPMG | https://kpmg.com/xx/en/our-insights/ai-and-technology.html | Global Tech Report |
+| PwC | https://www.pwc.com/us/en/tech-effect/ai-analytics.html | AI Predictions |
+| EY | https://www.ey.com/en_us/ai | AI Barometer |
+| WEF | https://www.weforum.org/publications/ | Blueprint |
+
+**Search queries:**
+1. "[Firm] AI strategy PDF 2026"
+2. "[Firm] AI roadmap report download"
+3. "[Firm] generative AI enterprise PDF"
+
+**Criteria for inclusion:**
+- Free to download (no paywall)
+- PDF or PPT format
+- Minimum 5 pages
+- Published within last 12 months
+
+For qualifying documents:
+- Record source firm, title, description
+- Note page count and format
+- Capture direct download URL
+- Add to AI Strategy Roadmaps sheet
+
 ### Step 3: Update Excel Workbook
 
 Use Python to update `AI_Use_Cases_Comprehensive_2026.xlsx`:
