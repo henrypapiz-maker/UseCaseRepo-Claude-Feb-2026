@@ -22,7 +22,7 @@ This session created a comprehensive AI Use Cases workbook with the following co
 | Mfg & Dist Finance Use Cases | 18 manufacturing finance use cases | Monthly |
 | AI Research & White Papers | 24 articles with synopses | Daily |
 | PE & M&A AI Use Cases | Private equity and M&A AI capabilities | Weekly |
-| AI Strategy Roadmaps | 23 downloadable PDFs from Big 4/consulting firms | Monthly |
+| AI Strategy Roadmaps | 31 downloadable PDFs from Big 4/consulting/tech firms | Monthly |
 
 ---
 
@@ -251,7 +251,11 @@ Repositories to monitor:
 | KPMG | https://kpmg.com/xx/en/our-insights/ai-and-technology.html | Global Tech Report |
 | PwC | https://www.pwc.com/us/en/tech-effect/ai-analytics.html | AI Predictions, Readiness |
 | EY | https://www.ey.com/en_us/ai | AI Barometer, Regulatory |
-| WEF | https://www.weforum.org/publications/ | Blueprint, Sovereignty |
+| WEF | https://www.weforum.org/publications/ | Blueprint, C-Suite Toolkit |
+| C3.ai | https://c3.ai/what-is-enterprise-ai/ | Enterprise AI Roadmap |
+| Info-Tech | https://www.infotech.com/research/ | AI Strategy Blueprint |
+| RTS Labs | https://rtslabs.com/enterprise-ai-roadmap/ | Enterprise AI Guide |
+| 3Cloud | https://3cloudsolutions.com/resources/ | AI Strategy eBook |
 
 **Search queries:**
 - "[Firm] AI strategy PDF 2026"
