@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Use Cases Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-bottom: 1px solid #e1e5eb;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d5a87;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #2d5a87;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            background: #e8f0f8;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #2d5a87;
+        }
+
+        .section-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #2d5a87 0%, #4a90c2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #1e3a5f;
+        }
+
+        .section-count {
+            background: #e8f0f8;
+            color: #2d5a87;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: auto;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Card */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .card-header {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card-thumb {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .card-thumb.code { background: #d4edda; }
+        .card-thumb.vendor { background: #fff3cd; }
+        .card-thumb.research { background: #d1ecf1; }
+        .card-thumb.platform { background: #e2d5f1; }
+        .card-thumb.roadmap { background: #f8d7da; }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .card-subtitle {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .card-body {
+            padding: 0 1rem 1rem;
+        }
+
+        .card-description {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background: #f0f0f0;
+            color: #555;
+        }
+
+        .tag.active { background: #d4edda; color: #155724; }
+        .tag.pdf { background: #f8d7da; color: #721c24; }
+        .tag.stars { background: #fff3cd; color: #856404; }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: #2d5a87;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Subsection */
+        .subsection {
+            margin-bottom: 2rem;
+        }
+
+        .subsection-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subsection-title {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .subsection-badge {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .badge-code {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-vendor {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a5f;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #8fc4e8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.5rem; }
+            .stats-bar { gap: 1rem; }
+            .card-grid { grid-template-columns: 1fr; }
+            main { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI Use Cases Hub</h1>
+        <p>Comprehensive AI Use Cases Research Workbook | Finance, Legal, Manufacturing, PE/M&A</p>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stat">
+            <div class="stat-number">80+</div>
+            <div class="stat-label">Use Cases</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">39</div>
+            <div class="stat-label">Code Repos</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">41</div>
+            <div class="stat-label">Vendor Products</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">31</div>
+            <div class="stat-label">Strategy Roadmaps</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">15</div>
+            <div class="stat-label">Platforms</div>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#finance" class="active">Finance</a></li>
+            <li><a href="#pe-ma">PE & M&A</a></li>
+            <li><a href="#legal">Legal Tech</a></li>
+            <li><a href="#manufacturing">Manufacturing</a></li>
+            <li><a href="#erp">ERP Platforms</a></li>
+            <li><a href="#epm">EPM Platforms</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#roadmaps">Strategy Roadmaps</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Finance & Accounting -->
+        <section id="finance" class="section">
+            <div class="section-header">
+                <div class="section-icon">💰</div>
+                <h2 class="section-title">Finance & Accounting</h2>
+                <span class="section-count">9 Repositories</span>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb code">🤖</div>
+                        <div>
+                            <div class="card-title">FinRobot</div>
+                            <div class="card-subtitle">AI4Finance-Foundation</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Open-source AI agent platform for financial applications with multiple AI agents and financial chain-of-thought reasoning.</p>
+                        <div class="card-meta">
+                            <span class="tag active">ACTIVE</span>
+                            <span class="tag stars">⭐ 1.2K</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <a href="https://github.com/AI4Finance-Foundation/FinRobot" class="card-link" target="_blank">View Repository →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb code">📊</div>
+                        <div>
+                            <div class="card-title">FinanceToolkit</div>
+                            <div class="card-subtitle">JerBouma</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Transparent and efficient financial analysis toolkit including DCF and DUPONT models for comprehensive valuation.</p>
+                        <div class="card-meta">
+                            <span class="tag active">ACTIVE</span>
+                            <span class="tag stars">⭐ 4.1K</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <a href="https://github.com/JerBouma/FinanceToolkit" class="card-link" target="_blank">View Repository →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb code">🧾</div>
+                        <div>
+                            <div class="card-title">TaxHacker</div>
+                            <div class="card-subtitle">vas3k</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">AI-powered tax document processing and analysis for automated tax preparation workflows.</p>
+                        <div class="card-meta">
+                            <span class="tag active">ACTIVE</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">LLM</span>
+                        </div>
+                        <a href="https://github.com/vas3k/TaxHacker" class="card-link" target="_blank">View Repository →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PE & M&A -->
+        <section id="pe-ma" class="section">
+            <div class="section-header">
+                <div class="section-icon">🤝</div>
+                <h2 class="section-title">Private Equity & M&A</h2>
+                <span class="section-count">25 Items</span>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-header">
+                    <h3 class="subsection-title">Open Source Tools</h3>
+                    <span class="subsection-badge badge-code">10 Repos</span>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb code">📈</div>
+                            <div>
+                                <div class="card-title">DCF Valuation Library</div>
+                                <div class="card-subtitle">halessi</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Discounted Cash Flow library with sensitivity analysis for valuation including earnings growth, cap_ex, and discount rate parameters.</p>
+                            <div class="card-meta">
+                                <span class="tag active">ACTIVE</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">API</span>
+                            </div>
+                            <a href="https://github.com/halessi/DCF" class="card-link" target="_blank">View Repository →</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb code">💹</div>
+                            <div>
+                                <div class="card-title">Stock-Valuation</div>
+                                <div class="card-subtitle">scfengv</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">5-year DCF model for intrinsic value calculation with WACC, Terminal Value, and margin of safety analysis.</p>
+                            <div class="card-meta">
+                                <span class="tag active">ACTIVE</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">yfinance</span>
+                            </div>
+                            <a href="https://github.com/scfengv/Stock-Valuation" class="card-link" target="_blank">View Repository →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-header">
+                    <h3 class="subsection-title">Vendor / SaaS Products</h3>
+                    <span class="subsection-badge badge-vendor">15 Products</span>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb vendor">🎯</div>
+                            <div>
+                                <div class="card-title">PitchBook</div>
+                                <div class="card-subtitle">Deal Sourcing</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Market intelligence platform for deal sourcing and company research with proprietary ML for company data and deal flow tracking.</p>
+                            <div class="card-meta">
+                                <span class="tag">Enterprise</span>
+                                <span class="tag">Deal Sourcing</span>
+                            </div>
+                            <a href="https://pitchbook.com/" class="card-link" target="_blank">Visit Website →</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb vendor">📋</div>
+                            <div>
+                                <div class="card-title">Kira Systems</div>
+                                <div class="card-subtitle">Litera</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">AI contract analysis for M&A due diligence with ML clause extraction, bulk contract review, and change-of-control detection.</p>
+                            <div class="card-meta">
+                                <span class="tag">Enterprise</span>
+                                <span class="tag">Due Diligence</span>
+                            </div>
+                            <a href="https://www.litera.com/kira" class="card-link" target="_blank">Visit Website →</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb vendor">🗄️</div>
+                            <div>
+                                <div class="card-title">Datasite</div>
+                                <div class="card-subtitle">VDR Platform</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">VDR with AI-powered document management, auto-indexing, AI Q&A, and redaction. ISO 27001/SOC 2 certified.</p>
+                            <div class="card-meta">
+                                <span class="tag">Enterprise</span>
+                                <span class="tag">VDR</span>
+                            </div>
+                            <a href="https://www.datasite.com/" class="card-link" target="_blank">Visit Website →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Tech -->
+        <section id="legal" class="section">
+            <div class="section-header">
+                <div class="section-icon">⚖️</div>
+                <h2 class="section-title">Legal Tech</h2>
+                <span class="section-count">23 Items</span>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-header">
+                    <h3 class="subsection-title">Open Source Tools</h3>
+                    <span class="subsection-badge badge-code">10 Repos</span>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb code">📄</div>
+                            <div>
+                                <div class="card-title">OpenContracts</div>
+                                <div class="card-subtitle">Open-Source-Legal</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Enterprise-grade LLM workspace for document extraction, redaction, rights management, and prompt playground.</p>
+                            <div class="card-meta">
+                                <span class="tag active">ACTIVE</span>
+                                <span class="tag stars">⭐ 700+</span>
+                                <span class="tag">Python</span>
+                            </div>
+                            <a href="https://github.com/Open-Source-Legal/OpenContracts" class="card-link" target="_blank">View Repository →</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb code">🔤</div>
+                            <div>
+                                <div class="card-title">LexNLP</div>
+                                <div class="card-subtitle">LexPredict</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Comprehensive NLP library for legal and regulatory text with entity extraction, citation parsing, and date/money extraction.</p>
+                            <div class="card-meta">
+                                <span class="tag active">ACTIVE</span>
+                                <span class="tag stars">⭐ 700+</span>
+                                <span class="tag">spaCy</span>
+                            </div>
+                            <a href="https://github.com/LexPredict/lexpredict-lexnlp" class="card-link" target="_blank">View Repository →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-header">
+                    <h3 class="subsection-title">Vendor / SaaS Products</h3>
+                    <span class="subsection-badge badge-vendor">13 Products</span>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb vendor">🔍</div>
+                            <div>
+                                <div class="card-title">Harvey AI</div>
+                                <div class="card-subtitle">Legal Drafting</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Generative AI for legal professionals with GPT-4 based document drafting, research, and analysis capabilities.</p>
+                            <div class="card-meta">
+                                <span class="tag">Enterprise</span>
+                                <span class="tag">GPT-4</span>
+                            </div>
+                            <a href="https://www.harvey.ai/" class="card-link" target="_blank">Visit Website →</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb vendor">💡</div>
+                            <div>
+                                <div class="card-title">Luminance</div>
+                                <div class="card-subtitle">Contract Analysis</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">AI platform for contract review with anomaly detection, clause comparison, and support for 80+ languages.</p>
+                            <div class="card-meta">
+                                <span class="tag">Enterprise</span>
+                                <span class="tag">ML</span>
+                            </div>
+                            <a href="https://www.luminance.com/" class="card-link" target="_blank">Visit Website →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manufacturing -->
+        <section id="manufacturing" class="section">
+            <div class="section-header">
+                <div class="section-icon">🏭</div>
+                <h2 class="section-title">Manufacturing & Distribution</h2>
+                <span class="section-count">23 Items</span>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-header">
+                    <h3 class="subsection-title">Open Source Tools</h3>
+                    <span class="subsection-badge badge-code">10 Repos</span>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb code">🏢</div>
+                            <div>
+                                <div class="card-title">ERPNext</div>
+                                <div class="card-subtitle">frappe</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Full-featured open source ERP with manufacturing, accounting, inventory, and BOM management capabilities.</p>
+                            <div class="card-meta">
+                                <span class="tag active">ACTIVE</span>
+                                <span class="tag stars">⭐ 31K</span>
+                                <span class="tag">Python</span>
+                            </div>
+                            <a href="https://github.com/frappe/erpnext" class="card-link" target="_blank">View Repository →</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb code">📅</div>
+                            <div>
+                                <div class="card-title">frePPLe</div>
+                                <div class="card-subtitle">Production Planning</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Open source production planning and scheduling with constraint-based planning, demand forecasting, and MRP.</p>
+                            <div class="card-meta">
+                                <span class="tag active">ACTIVE</span>
+                                <span class="tag stars">⭐ 500+</span>
+                                <span class="tag">Python/C++</span>
+                            </div>
+                            <a href="https://github.com/frePPLe/frepple" class="card-link" target="_blank">View Repository →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-header">
+                    <h3 class="subsection-title">Vendor / SaaS Products</h3>
+                    <span class="subsection-badge badge-vendor">13 Products</span>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb vendor">🔷</div>
+                            <div>
+                                <div class="card-title">SAP S/4HANA</div>
+                                <div class="card-subtitle">Enterprise ERP</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Enterprise ERP with Joule AI copilot, predictive MRP, and intelligent automation on in-memory platform.</p>
+                            <div class="card-meta">
+                                <span class="tag">Enterprise</span>
+                                <span class="tag">Joule AI</span>
+                            </div>
+                            <a href="https://www.sap.com/products/erp/s4hana.html" class="card-link" target="_blank">Visit Website →</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-thumb vendor">🔶</div>
+                            <div>
+                                <div class="card-title">Kinaxis RapidResponse</div>
+                                <div class="card-subtitle">Planning</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Concurrent planning with AI/ML for scenario planning, demand sensing, S&OP, and control tower capabilities.</p>
+                            <div class="card-meta">
+                                <span class="tag">Enterprise</span>
+                                <span class="tag">AI/ML</span>
+                            </div>
+                            <a href="https://www.kinaxis.com/" class="card-link" target="_blank">Visit Website →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ERP Platforms -->
+        <section id="erp" class="section">
+            <div class="section-header">
+                <div class="section-icon">🖥️</div>
+                <h2 class="section-title">ERP Platforms</h2>
+                <span class="section-count">10 Systems</span>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb platform">🔷</div>
+                        <div>
+                            <div class="card-title">SAP S/4HANA</div>
+                            <div class="card-subtitle">Joule AI Copilot</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Invoice processing, cash application, financial close automation with natural language AI assistant.</p>
+                        <div class="card-meta">
+                            <span class="tag">Enterprise</span>
+                            <span class="tag">50+ AI Scenarios</span>
+                        </div>
+                        <a href="https://www.sap.com/products/artificial-intelligence.html" class="card-link" target="_blank">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb platform">🔴</div>
+                        <div>
+                            <div class="card-title">Oracle Fusion</div>
+                            <div class="card-subtitle">50+ AI Agents</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Predictive accounting, anomaly detection, automated reconciliation with 50+ embedded AI agents.</p>
+                        <div class="card-meta">
+                            <span class="tag">Enterprise</span>
+                            <span class="tag">Embedded AI</span>
+                        </div>
+                        <a href="https://www.oracle.com/artificial-intelligence/" class="card-link" target="_blank">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb platform">🟦</div>
+                        <div>
+                            <div class="card-title">Microsoft D365</div>
+                            <div class="card-subtitle">Copilot</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Collections automation, budget analysis, expense management with Copilot AI across all modules.</p>
+                        <div class="card-meta">
+                            <span class="tag">Enterprise</span>
+                            <span class="tag">GPT-4</span>
+                        </div>
+                        <a href="https://dynamics.microsoft.com/en-us/ai/" class="card-link" target="_blank">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb platform">🟢</div>
+                        <div>
+                            <div class="card-title">Workday</div>
+                            <div class="card-subtitle">Illuminate AI</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Spend insights, workforce planning, anomaly detection with Illuminate AI platform.</p>
+                        <div class="card-meta">
+                            <span class="tag">Enterprise</span>
+                            <span class="tag">ML Native</span>
+                        </div>
+                        <a href="https://www.workday.com/en-us/artificial-intelligence.html" class="card-link" target="_blank">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EPM Platforms -->
+        <section id="epm" class="section">
+            <div class="section-header">
+                <div class="section-icon">📊</div>
+                <h2 class="section-title">EPM Platforms</h2>
+                <span class="section-count">5 Systems</span>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb platform">🔴</div>
+                        <div>
+                            <div class="card-title">Oracle EPM</div>
+                            <div class="card-subtitle">IPM Insights</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Predictive planning, narrative reporting, cash flow forecasting with embedded AI insights.</p>
+                        <div class="card-meta">
+                            <span class="tag">Enterprise</span>
+                            <span class="tag">Generative AI</span>
+                        </div>
+                        <a href="https://www.oracle.com/performance-management/" class="card-link" target="_blank">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb platform">🟣</div>
+                        <div>
+                            <div class="card-title">Anaplan</div>
+                            <div class="card-subtitle">PlanIQ</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Demand forecasting, scenario modeling, driver-based planning with PlanIQ ML engine.</p>
+                        <div class="card-meta">
+                            <span class="tag">Enterprise</span>
+                            <span class="tag">AutoML</span>
+                        </div>
+                        <a href="https://www.anaplan.com/" class="card-link" target="_blank">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb platform">🟠</div>
+                        <div>
+                            <div class="card-title">OneStream</div>
+                            <div class="card-subtitle">SensibleAI</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Account reconciliation, variance analysis, consolidation with SensibleAI built-in ML.</p>
+                        <div class="card-meta">
+                            <span class="tag">Enterprise</span>
+                            <span class="tag">Built-in ML</span>
+                        </div>
+                        <a href="https://onestream.com/" class="card-link" target="_blank">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section id="research" class="section">
+            <div class="section-header">
+                <div class="section-icon">📚</div>
+                <h2 class="section-title">AI Research & White Papers</h2>
+                <span class="section-count">24 Articles</span>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb research">🔬</div>
+                        <div>
+                            <div class="card-title">State of AI 2025</div>
+                            <div class="card-subtitle">McKinsey / QuantumBlack</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Comprehensive survey of 1,993 participants on AI adoption, value creation, and organizational transformation.</p>
+                        <div class="card-meta">
+                            <span class="tag pdf">PDF</span>
+                            <span class="tag">2025</span>
+                            <span class="tag">Hyperscaler</span>
+                        </div>
+                        <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" class="card-link" target="_blank">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb research">📖</div>
+                        <div>
+                            <div class="card-title">Tech Trends 2026</div>
+                            <div class="card-subtitle">Deloitte</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Annual technology trends report covering AI infrastructure, data bottlenecks, and enterprise AI adoption.</p>
+                        <div class="card-meta">
+                            <span class="tag pdf">PDF</span>
+                            <span class="tag">2026</span>
+                            <span class="tag">Big 4</span>
+                        </div>
+                        <a href="https://www.deloitte.com/global/en/our-thinking/insights/topics/tech-trends.html" class="card-link" target="_blank">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb research">🧠</div>
+                        <div>
+                            <div class="card-title">Agentic AI Research</div>
+                            <div class="card-subtitle">Anthropic</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Research on autonomous AI agents, safety considerations, and enterprise deployment patterns.</p>
+                        <div class="card-meta">
+                            <span class="tag">2025</span>
+                            <span class="tag">AI Studio</span>
+                        </div>
+                        <a href="https://www.anthropic.com/research" class="card-link" target="_blank">Read Article →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy Roadmaps -->
+        <section id="roadmaps" class="section">
+            <div class="section-header">
+                <div class="section-icon">🗺️</div>
+                <h2 class="section-title">AI Strategy Roadmaps</h2>
+                <span class="section-count">31 Documents</span>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb roadmap">📋</div>
+                        <div>
+                            <div class="card-title">AI Radar 2026</div>
+                            <div class="card-subtitle">BCG</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Survey of 2,360 executives on agentic AI, CEO leadership in AI, and organizational transformation strategies.</p>
+                        <div class="card-meta">
+                            <span class="tag pdf">PDF</span>
+                            <span class="tag">30+ pages</span>
+                            <span class="tag">2026</span>
+                        </div>
+                        <a href="https://web-assets.bcg.com/73/8e/cc44cbc14a3b81695f8a3de28ff1/ai-radar-2026-web-jan-2026-edit.pdf" class="card-link" target="_blank">Download PDF →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb roadmap">📋</div>
+                        <div>
+                            <div class="card-title">Technology Vision 2025</div>
+                            <div class="card-subtitle">Accenture</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">25th annual tech trends report exploring AI-powered autonomy and trust as key business challenges.</p>
+                        <div class="card-meta">
+                            <span class="tag pdf">PDF</span>
+                            <span class="tag">50+ pages</span>
+                            <span class="tag">2025</span>
+                        </div>
+                        <a href="https://www.accenture.com/content/dam/accenture/final/accenture-com/document-3/Accenture-Tech-Vision-2025.pdf" class="card-link" target="_blank">Download PDF →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb roadmap">📋</div>
+                        <div>
+                            <div class="card-title">AI C-Suite Toolkit</div>
+                            <div class="card-subtitle">World Economic Forum</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Comprehensive toolkit covering AI strategy, governance, risk management, and responsible AI implementation.</p>
+                        <div class="card-meta">
+                            <span class="tag pdf">PDF</span>
+                            <span class="tag">50+ pages</span>
+                            <span class="tag">2022</span>
+                        </div>
+                        <a href="https://www3.weforum.org/docs/WEF_Empowering_AI_Leadership_2022.pdf" class="card-link" target="_blank">Download PDF →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb roadmap">📋</div>
+                        <div>
+                            <div class="card-title">Enterprise AI Roadmap</div>
+                            <div class="card-subtitle">C3.ai</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Use case qualification model with guidance on business value, feasibility, prioritization and sequencing.</p>
+                        <div class="card-meta">
+                            <span class="tag pdf">PDF</span>
+                            <span class="tag">15-17 pages</span>
+                            <span class="tag">2020</span>
+                        </div>
+                        <a href="https://c3.ai/wp-content/uploads/2020/06/Best-Practices-in-Developing-an-Enterprise-AI-Roadmap.pdf" class="card-link" target="_blank">Download PDF →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb roadmap">📋</div>
+                        <div>
+                            <div class="card-title">Seizing the Agentic AI Advantage</div>
+                            <div class="card-subtitle">McKinsey</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Strategic guide on deploying agentic AI for enterprise transformation. Only 1% view gen AI strategies as mature.</p>
+                        <div class="card-meta">
+                            <span class="tag pdf">PDF</span>
+                            <span class="tag">25+ pages</span>
+                            <span class="tag">2025</span>
+                        </div>
+                        <a href="https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/seizing%20the%20agentic%20ai%20advantage/seizing-the-agentic-ai-advantage.pdf" class="card-link" target="_blank">Download PDF →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-thumb roadmap">📋</div>
+                        <div>
+                            <div class="card-title">Blueprint for Intelligent Economies</div>
+                            <div class="card-subtitle">World Economic Forum</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Guidance for nations to achieve successful AI revolution regardless of digital maturity level.</p>
+                        <div class="card-meta">
+                            <span class="tag pdf">PDF</span>
+                            <span class="tag">40+ pages</span>
+                            <span class="tag">2025</span>
+                        </div>
+                        <a href="https://reports.weforum.org/docs/WEF_A_Blueprint_for_Intelligent_Economies_2025.pdf" class="card-link" target="_blank">Download PDF →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AI Use Cases Comprehensive Workbook | Last Updated: February 2026</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+            <a href="AI_Use_Cases_Comprehensive_2026.xlsx">Download Excel Workbook</a> |
+            <a href="WEB_INDEX.md">View Navigation Index</a> |
+            <a href="DAILY_AUTOMATION_TASKS.md">Automation Tasks</a>
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                // Update active state
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
