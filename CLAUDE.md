@@ -15,13 +15,41 @@ This repository tracks Claude Code use cases, weekly adoption signals, and enter
 
 Three MCP servers are configured in `.mcp.json` (project root):
 
-| Server   | Transport | Auth Method                        |
-|----------|-----------|------------------------------------|
-| Vercel   | HTTP      | OAuth (browser prompt on first use)|
-| GitHub   | HTTP      | Personal Access Token (PAT)        |
-| Neon     | HTTP      | OAuth (browser prompt on first use)|
+| Server | Transport | Endpoint | Auth Method |
+|--------|-----------|----------|-------------|
+| Vercel | HTTP | `https://mcp.vercel.com` | API Token (`VERCEL_API_KEY` in `.env`) |
+| GitHub | HTTP | `https://api.githubcopilot.com/mcp/` | Personal Access Token (`GITHUB_PERSONAL_ACCESS_TOKEN` in `.env`) |
+| Neon | HTTP | `https://mcp.neon.tech/mcp` | OAuth (browser prompt on first use) |
 
-On first session, run `/mcp` to authenticate Vercel and Neon via browser.
+**Setup:** Copy `.env.example` to `.env` and fill in your tokens. On first session, run `/mcp` to authenticate Neon via browser.
+
+## Skills
+
+Skills are installed via `./setup-skills.sh`. Below is the full catalog:
+
+### Developer & Engineering Skills
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| web-artifacts-builder | `anthropics/skills` | Build web artifacts and components |
+| frontend-design | `anthropics/skills` | Frontend design assistance |
+| mcp-builder | `anthropics/skills` | Build and scaffold MCP servers |
+| webapp-testing | `anthropics/skills` | Web application testing |
+| Superpowers | `obra/superpowers` | 20+ battle-tested skills: planning, reviewing, testing, debugging |
+| AgentSys | `avifenesh/agentsys` | Task-to-production workflows, PR management, code review |
+| Fullstack Dev | `jeffallan/claude-skills` | 65 skills including Jira/Confluence integration |
+| DevOps | `akin-ozer/cc-devops-skills` | Infrastructure-as-code, CI/CD pipelines |
+| Security | `trailofbits/skills` | CodeQL, Semgrep, vulnerability detection |
+
+### Finance & Business Skills
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| Financial Analyst | `alirezarezvani/claude-skills` | Financial analysis and reporting |
+| CEO/CTO Advisor | `alirezarezvani/claude-skills` | Executive strategy guidance |
+| Revenue Ops | `alirezarezvani/claude-skills` | Revenue operations optimization |
+| Product Strategy | `alirezarezvani/claude-skills` | Product roadmap and strategy |
+| Campaign Analytics | `alirezarezvani/claude-skills` | Marketing campaign analysis |
 
 ## Development Guidelines
 
