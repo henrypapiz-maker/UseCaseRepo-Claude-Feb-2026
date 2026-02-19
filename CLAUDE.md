@@ -4,7 +4,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with th
 
 ## Project Overview
 
-This repository is a use case demonstration project for Claude Code integration.
+This repository tracks Claude Code use cases, weekly adoption signals, and enterprise readiness across key dimensions. It serves as a living reference for evaluating the AI coding agent landscape.
+
+## Model Configuration
+
+- **Default Model:** Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`)
+- Configured in `.claude/settings.json` and `.env.example`
+
+## MCP Integrations
+
+Three MCP servers are configured in `.mcp.json` (project root):
+
+| Server   | Transport | Auth Method                        |
+|----------|-----------|------------------------------------|
+| Vercel   | HTTP      | OAuth (browser prompt on first use)|
+| GitHub   | HTTP      | Personal Access Token (PAT)        |
+| Neon     | HTTP      | OAuth (browser prompt on first use)|
+
+On first session, run `/mcp` to authenticate Vercel and Neon via browser.
 
 ## Development Guidelines
 
@@ -25,15 +42,31 @@ This repository is a use case demonstration project for Claude Code integration.
 ## Common Commands
 
 ```bash
-# Add common development commands here as the project grows
+# First-time setup (MCP servers, skills, env file)
+./setup-skills.sh
+
+# Set model to Sonnet 4.5
+export CLAUDE_MODEL=claude-sonnet-4-5-20250929
+
+# Check MCP server status (inside Claude Code)
+/mcp
 ```
 
 ## Project Structure
 
 ```
 /
-├── CLAUDE.md          # This file - guidance for Claude Code
-└── (add directories as project grows)
+├── CLAUDE.md                        # This file - guidance for Claude Code
+├── .mcp.json                        # MCP server config (Vercel, GitHub, Neon)
+├── .env.example                     # API key templates (copy to .env)
+├── .claude/settings.json            # Claude Code project settings (model)
+├── setup-skills.sh                  # One-time setup script for skills & MCP
+├── weekly-records/                  # Weekly scan records by date
+│   └── week-ending-2026-02-12.md
+├── summaries/                       # Executive summaries
+│   └── executive-summary-2026-02-12.md
+└── use-case-log/                    # Key areas and use case tracking
+    └── key-areas-and-use-cases.md
 ```
 
 ## Notes for Claude
