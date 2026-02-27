@@ -90,9 +90,11 @@ export CLAUDE_MODEL=claude-sonnet-4-5-20250929
 ├── .claude/settings.json            # Claude Code project settings (model)
 ├── setup-skills.sh                  # One-time setup script for skills & MCP
 ├── weekly-records/                  # Weekly scan records by date
-│   └── week-ending-2026-02-12.md
+│   ├── week-ending-2026-02-12.md
+│   └── week-ending-2026-02-27.md
 ├── summaries/                       # Executive summaries
-│   └── executive-summary-2026-02-12.md
+│   ├── executive-summary-2026-02-12.md
+│   └── executive-summary-2026-02-27.md
 └── use-case-log/                    # Key areas and use case tracking
     └── key-areas-and-use-cases.md
 ```
